@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="icon" href="./Cipher_Files/Cipher_icon.ico">
+    <link rel="stylesheet" href="./Cipher_Files/reset.css">
+    <link rel="stylesheet" href="./Cipher_Files/style.css">
+    <script defer src="./Cipher_Files/script-cipher.js.download"></script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img class="header-logo" src="./Cipher_Files/Cipher_logo.png" alt="Cypher">
+        </div>
+    </header>
+    <main>
+        <div class="container-field">
+            <div class="left-field">
+                <textarea class="user-input" id="textinjs" placeholder="Ingrese su texto aquí!" oninput="validateInput(event)"></textarea>
+                <div class="footnote">
+                    <p class="user-warning">NOTA: Solo letras en minúsculas y sin acentos</p>
+                </div>
+                <div class="buttons">
+                    <button class="button-encrypt" onclick="encrypt()">Encriptar</button>
+                    <button class="button-decrypt" onclick="decrypt()">Desencriptar</button>
+                </div>
+            </div>
+            <div class="right-field">
+                <img class="imagen-vacio" id="munecojs" src="./Cipher_Files/Muñeco.png" alt="">
+                <p class="notext" id="textprocjs">Ningún mensaje fue encontrado</p>
+                <p class="placeholder-text" id="textgonejs">Ingrese el texto que desees encriptar o desencriptar.</p>
+                <button class="button-copy" id="copyjs" onclick="copy()">Copiar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/SaintsDR28" target="_blank">
+            <img class="footer-github" src="./Cipher_Files/GitHub-Mark.png" alt="">
+        </a>
+        <a href="https://www.linkedin.com/in/diegosantosrodriguez/" target="_blank">
+            <img class="footer-linkedin" src="./Cipher_Files/LinkedIn_Logo.png" alt="">
+        </a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+function validateInput(event) {
+    var userInput = event.target.value.toLowerCase();
+    var filteredInput = userInput.replace(/[^a-zA-Z\s]/g, '');
+    event.target.value = filteredInput;
+}
+
+function encrypt() {
+    var texto = document.getElementById("textinjs").value;
+
+    var replacements = {
+        "e": "enter",
+        "o": "ober",
+        "i": "imes",
+        "a": "ai",
+        "u": "ufat"
+    };
+
+    var secrettxt = texto.replace(/e|o|i|a|u/gi, function(match) {
+        return replacements[match];
+    });
+
+    var munecojs = document.getElementById("munecojs");
+    var textgonejs = document.getElementById("textgonejs");
+    var textprocjs = document.getElementById("textprocjs");
+    var copyjs = document.getElementById("copyjs");
+
+    munecojs.style.display = "none";
+    textgonejs.style.display = "none";
+    textprocjs.innerHTML = secrettxt;
+    copyjs.style.display = "inherit";
+}
+
+function decrypt() {
+    var texto = document.getElementById("textinjs").value;
+
+    var replacements = {
+        "enter": "e",
+        "ober": "o",
+        "imes": "i",
+        "ai": "a",
+        "ufat": "u"
+    };
+
+    var secrettxt = texto.replace(/enter|ober|imes|ai|ufat/gi, function(match) {
+        return replacements[match];
+    });
+
+    var munecojs = document.getElementById("munecojs");
+    var textgonejs = document.getElementById("textgonejs");
+    var textprocjs = document.getElementById("textprocjs");
+    var copyjs = document.getElementById("copyjs");
+
+    munecojs.style.display = "none";
+    textgonejs.style.display = "none";
+    textprocjs.innerHTML = secrettxt;
+    copyjs.style.display = "inherit";
+}
+
+function copy() {
+    var textToCopy = document.getElementById("textprocjs").innerText;
+
+    var elemento = document.createElement('textarea');
+    elemento.value = textToCopy;
+    document.body.appendChild(elemento);
+    elemento.select();
+    elemento.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    document.body.removeChild(elemento);
+    alert('El texto ha sido copiado');
+}
+ 
